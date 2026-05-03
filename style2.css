@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Background glow (UPDATED TO MATCH LOGO) */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, #ff1a1a, transparent 40%),
+              radial-gradient(circle at 80% 30%, #ff6a00, transparent 40%),
+              radial-gradient(circle at 50% 80%, #ff3c00, transparent 40%);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+h1 {
+  font-size: 56px;
+  background: linear-gradient(90deg, #ff1a1a, #ff6a00);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+header p {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* BUTTON (UPDATED) */
+button {
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ff1a1a, #ff6a00);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 60, 0, 0.8);
+}
+
+/* Results grid */
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 15px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Domain card */
+.domain {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(15px);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover glow */
+.domain:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 50px rgba(255, 60, 0, 0.3);
+}
+
+/* Gradient border */
+.domain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, #ff1a1a, #ff6a00, #ff3c00);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.domain strong {
+  font-size: 18px;
+}
+
+/* Status colors */
+.available {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.taken {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Price styling */
+.domain strong:last-child {
+  font-size: 20px;
+  color: #ff6a00;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
+}
+
+/* Featured section */
+.featured {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+/* Grid */
+.tld-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Card */
+.tld-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  backdrop-filter: blur(15px);
+  position: relative;
+  transition: 0.3s;
+}
+
+.tld-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(255, 60, 0, 0.3);
+}
+
+/* Tag */
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 10px;
+}
+
+.tag.gaming {
+  background: rgba(255, 60, 0, 0.3);
+}
+
+.tag.tech {
+  background: rgba(255, 100, 0, 0.3);
+}
+
+/* Title */
+.tld-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.tld-card p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* Price */
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6a00;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.tld-card button {
+  width: 100%;
+}
+
+/* Top bar */
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Menu container */
+.menu {
+  position: relative;
+}
+
+/* Button */
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Lines */
+.menu-btn span {
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Dropdown FIXED */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0; /* 🔥 THIS FIXES LEFT ISSUE */
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  min-width: 200px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* Links */
+.dropdown a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* HERO (restored properly) */
+.hero {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ff1a1a, #ff6a00);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
