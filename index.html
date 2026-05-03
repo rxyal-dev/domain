@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Domora
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="bg">
+  </div>
+  <header class="topbar">
+   <div class="logo-area">
+    <span class="brand">
+     Domora
+    </span>
+   </div>
+   <div class="menu">
+    <button class="menu-btn" onclick="toggleMenu(event)">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <div class="dropdown" id="dropdown">
+     <a href="/terms">
+      Terms of Service
+     </a>
+     <a href="https://discord.gg/domains" target="_blank">
+      Join Discord
+     </a>
+    </div>
+   </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+   <h1>
+    Find your perfect domain
+   </h1>
+   <p>
+    Search across hundreds of domain extensions instantly
+   </p>
+  </section>
+  <main>
+   <div class="search-container">
+    <input id="domainInput" onkeypress="if(event.key==='Enter') searchDomain()" placeholder="Search your domain..." type="text"/>
+    <button onclick="searchDomain()">
+     Search
+    </button>
+   </div>
+   <div id="results">
+   </div>
+   <section class="featured">
+    <h2>
+     Popular Domains
+    </h2>
+    <p class="subtitle">
+     Top picks to launch your next idea
+    </p>
+    <div class="tld-grid">
+     <div class="tld-card">
+      <div class="tag">
+       Popular
+      </div>
+      <h3>
+       .com
+      </h3>
+      <p>
+       The gold standard for any website.
+      </p>
+      <div class="price" id="price-com">
+      </div>
+      <button onclick="quickSearch('com')">
+       Check
+      </button>
+     </div>
+     <div class="tld-card">
+      <div class="tag gaming">
+       Gaming
+      </div>
+      <h3>
+       .gg
+      </h3>
+      <p>
+       Perfect for gaming brands and communities.
+      </p>
+      <div class="price" id="price-gg">
+      </div>
+      <button onclick="quickSearch('gg')">
+       Check
+      </button>
+     </div>
+     <div class="tld-card">
+      <div class="tag tech">
+       Tech
+      </div>
+      <h3>
+       .io
+      </h3>
+      <p>
+       Popular for startups and tech projects.
+      </p>
+      <div class="price" id="price-io">
+      </div>
+      <button onclick="quickSearch('io')">
+       Check
+      </button>
+     </div>
+     <div class="tld-card">
+      <div class="tag">
+       Cheap
+      </div>
+      <h3>
+       .cc
+      </h3>
+      <p>
+       Short, clean, and affordable.
+      </p>
+      <div class="price" id="price-cc">
+      </div>
+      <button onclick="quickSearch('cc')">
+       Check
+      </button>
+     </div>
+     <div class="tld-card">
+      <div class="tag">
+       Trending
+      </div>
+      <h3>
+       .xyz
+      </h3>
+      <p>
+       Modern and widely used globally.
+      </p>
+      <div class="price" id="price-xyz">
+      </div>
+      <button onclick="quickSearch('xyz')">
+       Check
+      </button>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <p>
+    © 2026 Domora
+   </p>
+  </footer>
+  <script src="script.js">
+  </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"31977027d90240cd93754ce250405855","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" src="v8c78df7c7c0f484497ecbca7046644da1771523124516">
+  </script>
+ </body>
+</html>
